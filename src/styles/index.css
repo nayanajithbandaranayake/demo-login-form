@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+}
+sup,
+.error {
+  color: red;
+}
+.error {
+  font-family: monospace;
+}
+.empty-error {
+  margin-top: 0.8em;
+}
+
+.show {
+  opacity: 1;
+  z-index: 10;
+  transition: all 0.5s ease-out;
+  grid-column: 2;
+  grid-row: 1 / -1;
+}
+.hide {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  opacity: 0;
+  z-index: -10;
+  transition: all 0.5s ease-out;
+}
+.form {
+  padding: 3em;
+  border-radius: 0.5em;
+  grid-column: 2;
+  grid-row: 1 / -1;
+  min-height: 8em;
+  width: 100%;
+  background: #eee;
+  box-shadow: 0.25em 0.25em 1em rgb(0, 0, 0, 0.1);
+}
+input {
+  background: #fffeee;
+  border: none;
+  padding: 0.5em;
+  min-width: 80%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+label {
+  text-transform: capitalize;
+  font-size: 0.9em;
+  display: block;
+  margin-bottom: 0.6em;
+  margin-top: 1em;
+}
+
+.caption {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  font-size: 2em;
+  font-weight: 600;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: auto 2em;
+}
+.submit {
+  display: block;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 600;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  border: none;
+  padding: 0.5em;
+  border-radius: 0.4em;
+  color: white;
+  background: rgb(14, 61, 163);
+  transition: all 0.2s ease-out;
+}
+.submit:hover {
+  transform: scale(1.1);
+}
+.already-signin {
+  margin-top: 0.8em;
+}
+.already-signin span {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+}
+.already-signin span:hover {
+  color: purple;
+}
+
+.success-reset {
+  display: grid;
+  place-items: center;
+}
+.success-reset h3 {
+  margin-bottom: 1.5em;
+  font-size: 1.1em;
+}
+
+.success-reset p {
+  margin-bottom: 0.8em;
+  font-size: 0.9em;
+}
+
+@media (max-width: 450px) {
+  body {
+    font-size: 6px;
+  }
+}
+@media (max-width: 560px) {
+  main {
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr auto;
+  }
+  .caption {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 1.7em;
+    margin-bottom: 2em;
+    margin-top: 1.5em;
+  }
+  .hide {
+    grid-column: 1;
+    grid-row: 2;
+  }
+  .show {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+@media (max-width: 770px) {
+  body {
+    font-size: 11px;
+  }
+}
+@media (min-width: 2000px) {
+  body {
+    font-size: 20px;
+  }
+}
