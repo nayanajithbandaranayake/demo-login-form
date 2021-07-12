@@ -10,6 +10,7 @@ const Login = () => {
 
   useEffect(() => {
     resetAllData();
+    // eslint-disable-next-line
   }, [isSigned, forgotPassword]);
 
   return (
